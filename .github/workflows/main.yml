@@ -22,6 +22,8 @@ jobs:
           pwd
           cd ampl.linux-intel64
           ./ampl --version
+      - name: update repo
+        run: git pull origin main -r
       - name: run the file
         run: |
           pwd
