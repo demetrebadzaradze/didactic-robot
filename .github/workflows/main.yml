@@ -15,6 +15,7 @@ jobs:
         run: |
           wget -O 'ampl.linux64.tgz' https://portal.ampl.com/external/?url=https://portal.ampl.com/dl/amplce/ampl.linux64.tgz
           tar -xzf ampl.linux64.tgz
+          cd ampl.linux-intel64/
           echo "${{ secrets.AMPL_LICENSE_UUID }}" > ampl/ampl.lic
           export PATH=$PWD/ampl:$PATH
 
