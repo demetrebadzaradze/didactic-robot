@@ -1,0 +1,22 @@
+name: Install AMPL
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  setup-ampl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install AMPL
+        run: |
+          wget https://portal.ampl.com/downloads/ampl.linux64.tgz
+          tar -xzf ampl.linux64.tgz
+          echo "${{ secrets.AMPL_LICENSE_UUID }}" > ampl/ampl.lic
+          export PATH=$PWD/ampl:$PATH
+
+      - name: Verify Installation
+        run: ampl --version
