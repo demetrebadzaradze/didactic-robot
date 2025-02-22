@@ -13,7 +13,7 @@ jobs:
 
       - name: Install AMPL
         run: |
-          wget https://portal.ampl.com/downloads/ampl.linux64.tgz
+          wget https://portal.ampl.com/download/amplapi.linux-intel64.20250221.tgz
           tar -xzf ampl.linux64.tgz
           echo "${{ secrets.AMPL_LICENSE_UUID }}" > ampl/ampl.lic
           export PATH=$PWD/ampl:$PATH
