@@ -25,4 +25,5 @@ jobs:
       - name: run the file
         run: |
           pwd
-          ./ampl model qF.mod
+          cd ampl.linux-intel64
+          ./ampl model ../qF.mod
