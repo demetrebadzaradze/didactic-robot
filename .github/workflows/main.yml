@@ -15,8 +15,7 @@ jobs:
         run: |
           wget -O 'ampl.linux64.tgz' https://portal.ampl.com/external/?url=https://portal.ampl.com/dl/amplce/ampl.linux64.tgz
           tar -xzf ampl.linux64.tgz
-          echo "${{ secrets.AMPL_LICENSE_UUID }}" > ampl.linux-intel64/ampl/ampl.lic
-          export PATH=$PWD/ampl:$PATH
+          export PATH=$PWD/ampl.linux-intel64/ampl:$PATH
 
       - name: Verify Installation
         run: ampl --version
